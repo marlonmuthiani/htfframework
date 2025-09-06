@@ -10,10 +10,16 @@ import com.lambda.investing.market_data_connector.xchange.BinanceXchangeMarketDa
 import com.lambda.investing.market_data_connector.xchange.XChangeMarketDataPublisher;
 import com.lambda.investing.model.asset.Currency;
 import com.lambda.investing.model.asset.Instrument;
+import com.lambda.investing.model.trading.OrderRequest;
+import com.lambda.investing.model.trading.OrderRequestAction;
+import com.lambda.investing.model.trading.OrderType;
+import com.lambda.investing.model.trading.MarketOrderType;
+import com.lambda.investing.model.trading.Verb;
+import com.lambda.investing.model.trading.ExecutionReport;
+import com.lambda.investing.model.trading.ExecutionReportStatus;
 import com.lambda.investing.model.market_data.Depth;
 import com.lambda.investing.model.market_data.Trade;
 import com.lambda.investing.model.messaging.Command;
-import com.lambda.investing.model.trading.*;
 import com.lambda.investing.trading_engine_connector.ExecutionReportListener;
 import com.lambda.investing.trading_engine_connector.TradingEngineConnector;
 import io.vavr.Tuple;

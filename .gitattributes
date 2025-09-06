@@ -1,0 +1,7 @@
+*.jar filter=lfs diff=lfs merge=lfs -text
+HFTFramework/AlgoTradingZeroMq.jar filter=lfs diff=lfs merge=lfs -text
+D:/git[[:space:]]repos/HFTFramework/java/executables/XChangeEngine/parquet_data_temp/csv_raw/xrpeur_kraken_depth_20250707.csv filter=lfs diff=lfs merge=lfs -text
+*.dll filter=lfs diff=lfs merge=lfs -text
+*.lib filter=lfs diff=lfs merge=lfs -text
+*.csv filter=lfs diff=lfs merge=lfs -text
+

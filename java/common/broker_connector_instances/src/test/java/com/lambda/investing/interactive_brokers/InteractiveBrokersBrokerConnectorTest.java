@@ -12,7 +12,7 @@ import com.lambda.investing.model.market_data.Trade;
 import org.junit.*;
 import org.junit.Assert;
 import org.junit.runner.RunWith;
-import org.mockito.runners.MockitoJUnitRunner;
+import org.mockito.junit.MockitoJUnitRunner;
 
 
 @Ignore("need to open interactive brokers")

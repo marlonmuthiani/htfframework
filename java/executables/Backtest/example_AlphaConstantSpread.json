@@ -7,7 +7,8 @@
   "algorithm": {
     "algorithmName": "AlphaConstantSpread_test",
     "parameters": {
-      "dummyAgent": 1,
+      "dummyAgent": 0,
+      "stepSeconds": 5,
       "spread_multiplier": "1.0",
       "epsilon": "0.2",
       "discountFactor": "0.0",

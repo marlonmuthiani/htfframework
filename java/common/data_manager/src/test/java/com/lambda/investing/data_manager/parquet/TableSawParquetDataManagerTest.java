@@ -10,7 +10,7 @@ import com.lambda.investing.model.market_data.TradeParquet;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.mockito.runners.MockitoJUnitRunner;
+import org.mockito.junit.MockitoJUnitRunner;
 import tech.tablesaw.api.Table;
 
 import java.io.File;
@@ -83,7 +83,8 @@ public class TableSawParquetDataManagerTest {
 
     public TableSawParquetDataManagerTest() throws Exception {
         Map<String, String> env = new HashMap<>();
-        String lambdaDataPathRsrs = ParquetDataManager.class.getClassLoader().getResource(lambdaDataPath).getPath();
+        // String lambdaDataPathRsrs = ParquetDataManager.class.getClassLoader().getResource(lambdaDataPath).getPath();
+        String lambdaDataPathRsrs = new File(ParquetDataManager.class.getClassLoader().getResource(lambdaDataPath).toURI()).getAbsolutePath();
         env.put("LAMBDA_DATA_PATH", lambdaDataPathRsrs);
         setEnv(env);
         AddTestInstruments();

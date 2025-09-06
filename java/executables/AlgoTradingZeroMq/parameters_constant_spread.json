@@ -1,22 +1,27 @@
 {
-  "marketDataPort": 666,
-  "tradeEnginePort": 677,
+
+
+  "marketDataPort": 6600,
+  "tradeEnginePort": 6601,
   "tradeEngineHost": "localhost",
   "marketDataHost": "localhost",
-  "paperTrading": "False",
+  "paperTrading": "True",
   "demoTrading": "False",
   "instrumentPks": [
-    "btcusdt_kraken"
+    "btceur_binance"
   ],
+  "factorPublisherPort": 8800,
+  "factorPublisherHost": "localhost",
   "algorithm": {
     "algorithmName": "ConstantSpread_zeromq_test",
     "parameters": {
-      "level": "0",
-      "skewLevel": "0",
+      "level": "1",
+      "skewLevel": "2",
       "seed": 5,
-      "quantity": "0.001",
-      "firstHour": "7.0",
-      "lastHour": "19.0"
+      "quantity": "0.00001",
+      "firstHour": "0.0",
+      "lastHour": "24.0",
+      "ui": 1
     }
   }
 }

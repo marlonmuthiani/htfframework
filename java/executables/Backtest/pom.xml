@@ -60,12 +60,23 @@
             <artifactId>slf4j-nop</artifactId>
         </dependency>
 
-    </dependencies>
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-core</artifactId>
+            <version>3.12.4</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-junit-jupiter</artifactId>
+            <version>3.12.4</version>
+            <scope>test</scope>
+        </dependency>
 
+    </dependencies>
 
     <build>
         <plugins>
-
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
@@ -78,46 +89,29 @@
                         </goals>
                     </execution>
                 </executions>
-
                 <configuration>
                     <finalName>${project.artifactId}</finalName>
                     <mainClass>com.lambda.investing.backtest.App</mainClass>
                 </configuration>
-
             </plugin>
-
-
+            <!--
             <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-jar-plugin</artifactId>
-                <configuration>
-                    <excludes>
-                        <exclude>**/application.properties</exclude>
-                    </excludes>
-                </configuration>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <phase>install</phase>
+                        <goals>
+                            <goal>copy-dependencies</goal>
+                        </goals>
+                        <configuration>
+                            <outputDirectory>${project.build.directory}/lib</outputDirectory>
+                        </configuration>
+                    </execution>
+                </executions>
             </plugin>
-
-            <!--&lt;!&ndash;Add lib dependencies&ndash;&gt;-->
-            <!--<plugin>-->
-            <!--<artifactId>maven-dependency-plugin</artifactId>-->
-            <!--<executions>-->
-            <!--<execution>-->
-            <!--<phase>install</phase>-->
-            <!--<goals>-->
-            <!--<goal>copy-dependencies</goal>-->
-            <!--</goals>-->
-            <!--<configuration>-->
-            <!--<outputDirectory>${project.build.directory}/lib</outputDirectory>-->
-            <!--</configuration>-->
-            <!--</execution>-->
-            <!--</executions>-->
-            <!--</plugin>-->
-
-
+            -->
         </plugins>
-
-
     </build>
 
 
-</project>
+    </project>

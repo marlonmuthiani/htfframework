@@ -11,6 +11,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>market_data_connectors</artifactId>
+    <packaging>jar</packaging>
 
     <dependencies>
         <dependency>

@@ -96,19 +96,10 @@ public abstract class XChangeBrokerConnector {
      * @return
      */
     public static CurrencyPair getCurrencyPair(String instrumentPk) {
-        String instrumentSymbol = instrumentPk.toUpperCase();
-        if (instrumentPk.contains("_")) {
-            instrumentSymbol = instrumentPk.split("_")[0].toUpperCase();
-        }
-        Currency currencyBaseObj = getSearchCurrency(true, instrumentSymbol);
-        Currency currencyQuoteObj = getSearchCurrency(false, instrumentSymbol);
-        if (currencyBaseObj != null && currencyQuoteObj != null) {
-            CurrencyPair pair = new CurrencyPair(currencyBaseObj, currencyQuoteObj);
-            return pair;
-        }
-        System.err.println(Configuration.formatLog("Currency pair {} not found!!!", instrumentPk));
-        return null;
-
+        String[] split = instrumentPk.split("_");
+        String base = split[0].toUpperCase();
+        String quote = split[1].toUpperCase();
+        return new CurrencyPair(base, quote);
     }
 
     public synchronized void connectWebsocket(List<Instrument> instrumentList) {

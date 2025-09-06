@@ -5,8 +5,7 @@ from market_data_feed.zeromq_live.zeromq_connector import ZeroMqRequester
 import os
 
 from trading_algorithms.reinforcement_learning.continuous_action_adaptor import ContinuousActionAdaptor
-from trading_algorithms.reinforcement_learning.rl_algorithm import RLAlgorithm, ReinforcementLearningActionType, \
-    RlAlgorithmParameters, BaseModelType
+from trading_algorithms.reinforcement_learning.rl_algorithm import RLAlgorithm, ReinforcementLearningActionType,     RlAlgorithmParameters, BaseModelType, RlPaths
 from utils.list_utils import list_to_numpy
 import numpy as np
 import json
@@ -24,6 +23,7 @@ class GymAgentLauncher:
         self.model_path = model_path
         self.normalizer_model_path = normalizer_model_path
         self.action_adaptor_path = action_adaptor_path
+        self.base_model_str = base_model_str # Added this line
 
         self.continuous_action_adaptor: ContinuousActionAdaptor = None
 
@@ -35,9 +35,11 @@ class GymAgentLauncher:
         parameters = {
             RlAlgorithmParameters.model: base_model_str,
         }
+        self.rl_paths = RlPaths(f"{self.model_path.split('/')[-1].split('.')[0]}_{self.base_model_str}") # Derive complete_name from model_path and base_model_str
         self.core_rl = CoreRlAlgorithm.create_core(core_type=CoreRlAlgorithmEnum.baselines3,
                                                    algorithm_info="",
-                                                   parameters=parameters)
+                                                   parameters=parameters,
+                                                   rl_paths=self.rl_paths)
 
         self.base_model = self.core_rl.get_model()
         if reinforcement_learning_action_type is None:

@@ -153,10 +153,10 @@ class AlgoTradingZeroMqLauncher:
                 RlAlgorithmParameters.action_type,
                 ReinforcementLearningActionType.continuous,
             )
-            return algorithm_name, rl_host, rl_port, base_model
+            return algorithm_name, rl_host, rl_port, base_model, reinforcement_learning_action_type
         except Exception as e:
             print(f"not the right json format on {self.algorithm_settings_path}")
-        return "", "", -1, ""
+        return "", "", -1, "", ""
 
     def run(self):
         if (

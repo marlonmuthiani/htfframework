@@ -1,4 +1,4 @@
-# HFT Framework java execution
+run backtest# HFT Framework java execution
 
 Algorithm connections are going to be configured on AlgorithmConnectorConfiguration
 

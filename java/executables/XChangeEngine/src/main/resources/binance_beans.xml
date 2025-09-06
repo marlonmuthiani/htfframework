@@ -60,7 +60,7 @@
           class="com.lambda.investing.connector.zero_mq.ZeroMqPublisher">
         <constructor-arg index="0" value="binance_ExecutionReportPublisher"/>
         <constructor-arg index="1" value="${publisher.threads}"/>
-        <constructor-arg index="2" value="true"/>
+        <property name="server" value="true"/>
     </bean>
 
 

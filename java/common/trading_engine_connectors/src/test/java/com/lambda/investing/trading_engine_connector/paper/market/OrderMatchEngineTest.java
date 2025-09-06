@@ -49,7 +49,7 @@ import static org.mockito.Mockito.doAnswer;
 
 			public Void answer(InvocationOnMock invocation) {
 				//				Object[] args = invocation.getArguments();
-				Trade trade = invocation.getArgumentAt(0, Trade.class);
+				Trade trade = invocation.getArgument(0, Trade.class);
 				lastTradeListen = trade;
 				return null;
 			}
@@ -59,7 +59,7 @@ import static org.mockito.Mockito.doAnswer;
 
 			public Void answer(InvocationOnMock invocation) {
 				//				Object[] args = invocation.getArguments();
-				Depth depth = invocation.getArgumentAt(0, Depth.class);
+				Depth depth = invocation.getArgument(0, Depth.class);
 				lastDepthListen = depth;
 				return null;
 			}
@@ -69,7 +69,7 @@ import static org.mockito.Mockito.doAnswer;
 
 			public Void answer(InvocationOnMock invocation) {
 				//				Object[] args = invocation.getArguments();
-				ExecutionReport executionReport = invocation.getArgumentAt(0, ExecutionReport.class);
+				ExecutionReport executionReport = invocation.getArgument(0, ExecutionReport.class);
 				lastExecutionReportListenList.add(executionReport);
 				lastExecutionReportListen = executionReport;
 				return null;

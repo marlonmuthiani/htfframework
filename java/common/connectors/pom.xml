@@ -13,8 +13,7 @@
     </parent>
 
     <artifactId>connectors</artifactId>
-
-
+    <packaging>jar</packaging>
 
     <dependencies>
         <dependency>

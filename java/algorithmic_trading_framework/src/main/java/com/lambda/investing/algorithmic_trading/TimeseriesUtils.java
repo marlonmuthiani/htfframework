@@ -2,7 +2,7 @@ package com.lambda.investing.algorithmic_trading;
 
 import com.lambda.investing.ArrayUtils;
 import com.lambda.investing.TimeSeriesQueue;
-import javafx.util.Pair;
+import com.lambda.investing.algorithmic_trading.Pair;
 import lombok.Getter;
 import org.apache.commons.math3.stat.descriptive.DescriptiveStatistics;
 

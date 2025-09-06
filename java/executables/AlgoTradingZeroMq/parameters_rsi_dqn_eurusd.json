@@ -9,7 +9,7 @@
     "eurusd_darwinex"
   ],
   "algorithm": {
-    "algorithmName": "DQNRSISideQuoting_eurusd_darwinex_test",
+    "algorithmName": "AlphaConstantSpread",
     "parameters": {
       "rlHost": "localhost",
       "rlPort": 1212,

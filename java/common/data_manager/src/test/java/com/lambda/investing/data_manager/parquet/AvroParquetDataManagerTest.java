@@ -13,7 +13,7 @@ import org.junit.Assert;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.mockito.runners.MockitoJUnitRunner;
+import org.mockito.junit.MockitoJUnitRunner;
 import tech.tablesaw.api.Table;
 
 import java.io.File;
@@ -86,7 +86,8 @@ public class AvroParquetDataManagerTest {
 
     public AvroParquetDataManagerTest() throws Exception {
         Map<String, String> env = new HashMap<>();
-        String lambdaDataPathRsrs = AvroParquetDataManager.class.getClassLoader().getResource(lambdaDataPath).getPath();
+        // String lambdaDataPathRsrs = AvroParquetDataManager.class.getClassLoader().getResource(lambdaDataPath).getPath();
+        String lambdaDataPathRsrs = new File(AvroParquetDataManager.class.getClassLoader().getResource(lambdaDataPath).toURI()).getAbsolutePath();
         env.put("LAMBDA_DATA_PATH", lambdaDataPathRsrs);
         setEnv(env);
         AddTestInstruments();

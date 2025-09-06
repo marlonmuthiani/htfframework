@@ -11,7 +11,7 @@ PROJECT_PATH = pathlib.Path(__file__).parent.absolute()
 
 LAMBDA_OUTPUT_PATH = os.getenv(
     key='LAMBDA_OUTPUT_PATH', default=str(PROJECT_PATH) + os.sep + 'output'
-)
+).strip()
 
 LAMBDA_INPUT_PATH = os.getenv(
     key='LAMBDA_INPUT_PATH', default=str(PROJECT_PATH) + os.sep + 'input'
@@ -79,7 +79,7 @@ if not os.path.exists(LAMBDA_OUTPUT_PATH):
 if not os.path.exists(LAMBDA_TEMP_PATH):
     os.mkdir(path=LAMBDA_TEMP_PATH)
 
-LAMBDA_DATA_PATH = os.getenv("LAMBDA_DATA_PATH", 'X:\\')
+LAMBDA_DATA_PATH = os.getenv("LAMBDA_DATA_PATH", 'X:\')
 # %%
 global initialized_configuration
 we_are_initialized = (
@@ -115,7 +115,8 @@ if not we_are_initialized:
             text_file.write(output)
 
     create_application_properties()
-# %% LOGGER
+# %%
+# LOGGER
 import os
 import pathlib
 import logging

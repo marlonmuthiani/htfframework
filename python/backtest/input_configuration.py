@@ -264,3 +264,31 @@ class InputConfiguration:
                 + str(uuid.uuid1())
                 + '.json'
         )
+
+
+class TrainInputConfiguration:
+    def __init__(
+        self,
+        memory_path: str,
+        output_model_path: str,
+        action_columns: int,
+        state_columns: int,
+        number_epochs: int,
+    ):
+        self.memory_path = memory_path
+        self.output_model_path = output_model_path
+        self.action_columns = action_columns
+        self.state_columns = state_columns
+        self.number_epochs = number_epochs
+
+    def get_json(self) -> str:
+        return json.dumps({
+            "memory_path": self.memory_path,
+            "output_model_path": self.output_model_path,
+            "action_columns": self.action_columns,
+            "state_columns": self.state_columns,
+            "number_epochs": self.number_epochs,
+        })
+
+    def get_filename(self) -> str:
+        return f"train_config_{uuid.uuid1()}.json"
